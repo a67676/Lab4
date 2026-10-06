@@ -1,0 +1,37 @@
+34 ?- house = house.
+true.
+##same constants. They are equal.
+35 ?- house = abc.
+false.
+##different constants. They are not equal.
+36 ?- edge(a, b) = edge(C, b).
+C = a.
+##Since the predicts are the same the two sides will be equal if the arguments are equal, since b=b, C must equal a.
+37 ?- edge(a, d) = edge(C,B).
+C = a,
+B = d.
+## Since the predicts are the same the two sides are equal if the variables are equal to the constants. Therefore, C=a, B=d.
+38 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+## Since the predicts are the same the two sides are equal if the variables are equal to the constants. Therefore, C=a, B=d.
+Whether the variables are on the right or left does not matter here.
+39 ?- edge(A, f(g,h)) = edge(a,b).
+false.
+##Here the second argument on the left side is a predict where as the second argument on the right side is a constant. The two sides are not equal.
+40 ?- edge(A, f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+## Here the same situation is happening but instead of a constant on the right side for the second argument we have a variable, therefore B = f(g, h) and A = a.
+41 ?- edge(A,A) = edge(b,c).
+false.
+## This is false because this statement implies that A=b and A=c, this is a contradiction.
+42 ?- edge(A, A) = edge(b, b).
+A = b.
+## Here since the variable "A" equals "b" in both arguments the result is simply A = b.
+43 ?- A=B, B=f.
+A = B, B = f.
+## This is just printed in the logically equivalent form.
+45 ?- A = B, B= f, A = e.
+false.
+##This statement here causes a contradiction, since A = B and B = f implies A = f. But then A is redefined as A = e.

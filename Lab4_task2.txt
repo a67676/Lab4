@@ -1,0 +1,25 @@
+46 ?- consult(['c:/Users/Lenovo/Downloads/Lab04_family_facts.pl']).
+true.
+
+47 ?- female(X).
+X = sara ;
+X = nora.
+
+48 ?- male(_).
+true .
+
+49 ?- parent(Y, faisal), parent(X, Y).
+Y = muhammad,
+X = ali.
+
+## Faisal's grandparent is Ali.
+
+51 ?- parent(ahmad, X), female(X).
+X = sara ;
+X = nora .
+
+
+53 ?- parent(X, ahmad), parent(X, muhammad).
+X = ali.
+54 ?- parent(X, nora), parent(X, khan), male(khan).
+X = ahmad.
